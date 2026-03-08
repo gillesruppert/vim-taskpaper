@@ -70,6 +70,8 @@ setlocal autoindent
     \       :<C-u>call taskpaper#archive_done()<CR>
     nnoremap <silent> <buffer> <Plug>TaskPaperShowToday
     \       :<C-u>call taskpaper#search_tag('today')<CR>
+    nnoremap <silent> <buffer> <Plug>TaskPaperShowWeek
+    \       :<C-u>call taskpaper#search_tag('week')<CR>
     nnoremap <silent> <buffer> <Plug>TaskPaperShowCancelled
     \       :<C-u>call taskpaper#search_tag('cancelled')<CR>
     nnoremap <silent> <buffer> <Plug>TaskPaperToggleCancelled
@@ -78,6 +80,8 @@ setlocal autoindent
     \       :call taskpaper#toggle_tag('done', taskpaper#date())<CR>:silent! call repeat#set("\<Plug>TaskPaperToggleDone", v:count)<CR>
     nnoremap <silent> <buffer> <Plug>TaskPaperToggleToday
     \       :call taskpaper#toggle_tag('today', '')<CR>:silent! call repeat#set("\<Plug>TaskPaperToggleToday", v:count)<CR>
+    nnoremap <silent> <buffer> <Plug>TaskPaperToggleWeek
+    \       :call taskpaper#toggle_tag('week', '')<CR>:silent! call repeat#set("\<Plug>TaskPaperToggleWeek", v:count)<CR>
     nnoremap <silent> <buffer> <Plug>TaskPaperMoveToProject
     \       :call taskpaper#move_to_project()<CR>
 
@@ -100,9 +104,11 @@ if !exists("no_plugin_maps") && !exists("no_taskpaper_maps")
 
     nmap <buffer> <Leader>tD <Plug>TaskPaperArchiveDone
     nmap <buffer> <Leader>tT <Plug>TaskPaperShowToday
+    nmap <buffer> <Leader>tW <Plug>TaskPaperShowWeek
     nmap <buffer> <Leader>tX <Plug>TaskPaperShowCancelled
     nmap <buffer> <Leader>td <Plug>TaskPaperToggleDone
     nmap <buffer> <Leader>tt <Plug>TaskPaperToggleToday
+    nmap <buffer> <Leader>tw <Plug>TaskPaperToggleWeek
     nmap <buffer> <Leader>tx <Plug>TaskPaperToggleCancelled
     nmap <buffer> <Leader>tm <Plug>TaskPaperMoveToProject
 
